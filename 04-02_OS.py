@@ -42,8 +42,11 @@ def nonexisting_file():
         print("Der Pfad exisiert bereits, geben sie einen anderen Dateipfad ein.")
         nonexisting_file()
     else: 
-        print("Die Datei konnte nicht gefunden werden.")
-nonexisting_file()
+        with open(filename, "w") as outfile:
+            content = input("Die neue Datei wird angelegt:\n")     
+            print(content, file=outfile)
+            print("Daten wurden in der Datei " + filename + " gespeichert!")
+
 
 
 

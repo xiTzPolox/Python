@@ -36,13 +36,14 @@ else:
 """
 
 import os
-
-filepath = input("Geben Sie einen Dateipfad ein: ")
-if os.path.isfile(filepath):
-    print("Der Pfad exisiert bereits, geben sie einen anderen Dateipfad ein.")
-    
-else: 
-    print("Die Datei konnte nicht gefunden werden.")
+def nonexisting_file():
+    filepath = input("Geben Sie einen Dateipfad ein: ")
+    if os.path.isfile(filepath):
+        print("Der Pfad exisiert bereits, geben sie einen anderen Dateipfad ein.")
+        nonexisting_file()
+    else: 
+        print("Die Datei konnte nicht gefunden werden.")
+nonexisting_file()
 
 
 
